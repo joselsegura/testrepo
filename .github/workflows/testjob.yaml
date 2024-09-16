@@ -1,0 +1,12 @@
+name: Test job
+on: [push, pull_request]
+
+jobs:
+  testjob:
+    runs-on: ubuntu-latest
+    name: Print the existing files
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run pylint
+        run: ls -R
+
